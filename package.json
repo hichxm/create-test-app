@@ -1,0 +1,23 @@
+{
+  "name": "create-test-app",
+  "version": "1.0.0",
+  "description": "installer of bot",
+  "bin": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hichxm/create-test-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hichxm/create-test-app/issues"
+  },
+  "homepage": "https://github.com/hichxm/create-test-app#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "sao": "^1.1.4"
+  }
+}
