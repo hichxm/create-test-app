@@ -1,21 +1,16 @@
 #!/usr/bin/env node
+const _path = require("path");
 
-const path = require('path')
-const sao = require('sao')
-const minimist = require('minimist')
+const minimist = require("minimist");
+const git = require("simple-git");
 
-const argv = minimist(process.argv.slice(2))
-// In a custom directory or current directory
-const targetPath = path.resolve(argv._[0] || '.')
+let argv = minimist(process.argv)["_"];
+let dirPath = _path.resolve(argv[2] || "./");
 
-console.log(targetPath);
+console.log(`Clone`);
 
-console.log(`> Generating Discord.json project in ${targetPath}`)
-
-sao({
-    git: "dotOverflow/discord.json",
-    outDir: targetPath
-}).catch(err => {
-  console.error(err.name === 'SAOError' ? err.message : err.stack)
-  process.exit(1)
-})
+git().silent(true)
+    .clone("http://github.com/tunnckocore/gitclone", dirPath)
+    .then(() => {
+        console.log("it's okay ^^");
+    });
