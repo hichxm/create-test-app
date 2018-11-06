@@ -14,7 +14,7 @@ console.log(`> Generating Discord.json project in ${targetPath}`)
 
 sao({
     git: "dotOverflow/discord.json",
-    outDir: targetPath
+    dir: targetPath
 }).catch(err => {
   console.error(err.name === 'SAOError' ? err.message : err.stack)
   process.exit(1)
